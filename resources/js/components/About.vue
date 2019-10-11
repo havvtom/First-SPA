@@ -6,7 +6,7 @@
                     <div class="card-header">About Component</div>
 
                     <div class="card-body">
-                        I'm an about component.
+                        I'm an ABOUT COMPONENT.
                     </div>
                 </div>
             </div>
@@ -21,4 +21,3 @@
         }
     }
 </script>
-
