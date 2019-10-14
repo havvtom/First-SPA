@@ -12,30 +12,36 @@
     </head>
     <body>
         <div id="app">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
+                <div class="container">
+                  <a class="navbar-brand js-scroll-trigger" href="#page-top">My LOGO</a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                       <router-link to="/" class="nav-link js-scroll-trigger">Home</router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/about" class="nav-link js-scroll-trigger">About</router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/contactUs" class="nav-link js-scroll-trigger">Contact Us</router-link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
 
-            <!-- <router-link to="/">Home</router-link>
-            <router-link to="/about">About</router-link>
-            <router-link to="/contactUs">Contact Us</router-link> -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <router-link class="nav-item nav-link" to="/">Home</router-link>
-                  </li>
-                  <li class="nav-item">
-                    <router-link class="nav-item nav-link" to="/about">About</router-link>
-                  </li>
-                  <li class="nav-item">
-                    <router-link class="nav-item nav-link" to="/contactUs">Contact Us</router-link>
-                  </li>                  
-                </ul>
+              <div class="jumbotron bg-info text-white text-center">
+                  <div class="container ">
+                    <h1 class="display-3">
+                      Citi Construction
+                    </h1>
+                    <p class="lead">The best in what we do</p>
+                  </div>
               </div>
-            </nav>
-
             <router-view></router-view>
             
         </div>

@@ -1,57 +1,42 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="contact1">
-        <div class="container-contact1">
-            <div class="contact1-pic js-tilt" data-tilt>
-                <img src="images/img-01.png" alt="IMG">
+       
+           
+                <div class="container contact-form">
+            <div class="contact-image">
+                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
             </div>
-
-            <form class="contact1-form validate-form" @submit.prevent="sendMail">
-                <span class="contact1-form-title">
-                    Get in touch
-                </span>
-
-                <div class="wrap-input1 validate-input" >
-                    <input class="input1" type="text" name="name" v-model="form.name" placeholder="Name"
-                     :class="{ 'is-invalid': form.errors.has('name') }">
-                    <span class="shadow-input1"></span>
-                    <has-error :form="form" field="name"></has-error>
-                </div>
-
-                <div class="wrap-input1 validate-input" >
-                    <input class="input1" type="text" name="email" v-model="form.email" placeholder="Email"
-                     :class="{ 'is-invalid': form.errors.has('email') }">
-                    <span class="shadow-input1"></span>
-                    <has-error :form="form" field="email"></has-error>
-                </div>
-
-                <div class="wrap-input1 validate-input">
-                    <input class="input1" type="text" name="subject" v-model="form.subject" placeholder="Subject"  :class="{ 'is-invalid': form.errors.has('subject') }">
-                    <span class="shadow-input1"></span>
-                    <has-error :form="form" field="subject"></has-error>
-                </div>
-
-                <div class="wrap-input1 validate-input" >
-                    <textarea class="input1" name="message" v-model="form.message" placeholder="Message"></textarea  :class="{ 'is-invalid': form.errors.has('message') }">
-                    <span class="shadow-input1"></span>
-                    <has-error :form="form" field="message"></has-error>
-                </div>
-
-                <div class="container-contact1-form-btn">
-                    <button class="contact1-form-btn" type="submit">
-                        <span>
-                            Send Email
-                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                        </span>
-                    </button>
+            <form @submit.prevent="sendMail" >
+                <h3>Drop Us a Message</h3>
+               <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input v-model="form.name" type="text" name="txtName" class="form-control" :class="{ 'is-invalid': form.errors.has('name') }" placeholder="Your Name *" value="" />
+                            <has-error :form="form" field="name"></has-error>
+                        </div>
+                        <div class="form-group">
+                            <input v-model="form.email" type="text" name="txtEmail" class="form-control" :class="{ 'is-invalid': form.errors.has('email') }" placeholder="Your Email *" value="" />
+                            <has-error :form="form" field="email"></has-error>
+                        </div>
+                        <div class="form-group">
+                            <input v-model="form.phone" type="text" name="txtPhone" class="form-control" :class="{ 'is-invalid': form.errors.has('phone') }" placeholder="Your Phone Number *" value="" />
+                            <has-error :form="form" field="phone"></has-error>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit"  name="btnSubmit" class="btnContact"  value="Send Message" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <textarea v-model="form.message" name="txtMsg" class="form-control" :class="{ 'is-invalid': form.errors.has('message') }" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+                            <has-error :form="form" field="message"></has-error>
+                        </div>
+                    </div>
                 </div>
             </form>
-        </div>
-    </div>
+
                 
-            </div>
+    
         </div>
     </div>
 </template>
@@ -72,6 +57,7 @@
                     name:'',
                     message: '',
                     subject: '',
+                    phone:'',
                     email: ''
                 })
             }

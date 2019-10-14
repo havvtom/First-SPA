@@ -9,12 +9,26 @@ class MailController extends Controller
     public function sendMail(Request $request){
 
    
-      \Mail::send(['text'=>'mail'], $request, function($message) {
-         $message->to('havvtom@gmail.com', 'Tutorials Point')->subject
-            ('Laravel Basic Testing Mail');
-         $message->from($request->email,$request->name);
-      });
-      return "Basic Email Sent. Check your inbox.";
+      $this->validate($request, [
+        'name' => 'required',
+        'phone' => 'required',
+        'email' => 'required|email',
+        'message' => 'required'
+        ]);
+
+      \Mail::send('email',
+       array(
+           'name' => $request->get('name'),
+           'email' => $request->get('email'),
+           'phone' => $request->phone,
+           'user_message' => $request->get('message')
+       ), function($message)
+   {
+       
+       $message->to('havvtom@gmail.com', 'Admin')->subject('Business');
+   });
+    return back()->with('success', 'Thanks for contacting us!'); 
+
 
     }
 }
