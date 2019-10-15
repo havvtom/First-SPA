@@ -27,7 +27,7 @@ class MailController extends Controller
        
        $message->to('havvtom@gmail.com', 'Admin')->subject('Business');
    });
-    return back()->with('success', 'Thanks for contacting us!'); 
+    return 'Thanks for contacting us!'; 
 
 
     }
